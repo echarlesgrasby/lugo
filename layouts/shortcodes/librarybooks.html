@@ -1,0 +1,14 @@
+<!--
+    Builds out a library book list from a JSON file and displays it as a set of un-ordered lists
+-->
+<div>
+    {{ $libinfo := .Site.Data.library }}
+        {{ range $libinfo.works }}
+        <h2> {{ .genre }} </h2>
+            {{ range .books }}
+            <ul>
+                <li class="bookentry">{{ .author }}, {{ .title }}</li>
+            </ul>     
+            {{ end }}
+        {{ end }}
+</div>
